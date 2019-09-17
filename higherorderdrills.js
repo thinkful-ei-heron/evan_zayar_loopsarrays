@@ -73,3 +73,15 @@ steps.forEach (step => {
     console.log(`Movement # ${counter}: ${step} step(s)`);
     counter++;
 });
+
+
+let array = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'.split(' ')
+let accumulated = '';
+let reducefunction = (accumulated, current) => {
+    if (current.length == 3) {
+        return accumulated += ' '
+    } else {
+        return accumulated += current[current.length-1].toUpperCase();
+    }
+}
+console.log(array.reduce(reducefunction, accumulated));
