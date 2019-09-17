@@ -39,3 +39,37 @@ const filteredNames = filter(myNames, function(name) {
 
 console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+
+
+function hazardWarningCreator (typeOfWarning) {
+    let warningCounter = 0;
+    return function (location) {
+        warningCounter++;
+        console.log(`Danger! There is a ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+    }
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const snowWarning = hazardWarningCreator('Snow on the Road');
+const floodWarning = hazardWarningCreator('Flood on the Road');
+
+rocksWarning ('Main St and Pacific Ave');
+rocksWarning ('Ceninela Ave and Olympic Blvd');
+rocksWarning ('Washington St and 5th Ave');
+
+
+
+let turtleMovements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]
+let newTurtleMovements = turtleMovements.filter (movement => movement [0] >= 0 && movement [1] >= 0);
+
+let steps = [];
+let totalSteps = newTurtleMovements.map (movement => steps.push (movement [0] + movement [1]));
+console.log (steps)
+
+let counter=1
+steps.forEach (step => {
+    console.log(`Movement # ${counter}: ${step} step(s)`);
+    counter++;
+});
